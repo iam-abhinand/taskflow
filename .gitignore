@@ -1,0 +1,26 @@
+# Python
+venv-taskflow/
+__pycache__/
+*.pyc
+*.pyo
+.env
+*.egg-info/
+
+# Django
+backend/staticfiles/
+backend/media/
+db.sqlite3
+*.log
+
+# Node / React
+frontend/node_modules/
+frontend/build/
+frontend/.env
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Docker
+*.pid
