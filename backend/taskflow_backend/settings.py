@@ -123,6 +123,13 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = env('CELERY_TIMEZONE', default='UTC')
 
+CELERY_BEAT_SCHEDULE = {
+    'check-overdue-tasks-every-5-minutes': {
+        'task': 'notifications.tasks.check_overdue_tasks',
+        'schedule': 300.0,  # seconds
+    },
+}
+
 # Password validation
 # https://docs.djangoproject.com/en/6.1/ref/settings/#auth-password-validators
 
