@@ -37,5 +37,16 @@ services:
       - db
       - redis
 
+  beat:
+    build: ./backend
+    command: celery -A taskflow_backend beat --loglevel=info
+    volumes:
+      - ./backend:/app
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - db
+      - redis
+
 volumes:
   postgres_data:
